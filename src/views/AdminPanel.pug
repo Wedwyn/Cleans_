@@ -1,0 +1,69 @@
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Admin Panel
+  link(rel='icon' href='favicon.ico')
+  link(rel='stylesheet' href='css/AdminStyle.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap' rel='stylesheet')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap' rel='stylesheet')
+header#hero-banner-href.header-menu
+  .container_menu
+    .header-price-wrapper
+      .header
+        a(href='/')
+          img.header__title(src='img/header-menu/LOGO CLEANS.png' alt='')
+main
+  section
+    .container
+      .Admin-header.section-title
+        h2 &Pcy;&Acy;&Ncy;&IEcy;&Lcy;&SOFTcy;
+        h2 &Acy;&Dcy;&Mcy;&Icy;&Ncy;&Icy;&Scy;&Tcy;&Rcy;&Icy;&Rcy;&Ocy;&Vcy;&Acy;&Ncy;&Icy;&YAcy;
+      each feedback, index in feedbacks
+        .coment-block
+          .user-name-info
+            p=feedback.username
+            .user-time-review-past
+              p 0 &dcy;&ncy;&iecy;&jcy; &ncy;&acy;&zcy;&acy;&dcy;
+          .text-in-card
+            p=feedback.text
+          .button-panel
+            .rate-sec
+              if feedback.rating >= 1
+                img.star(src='img/review/starCOLORED.png' alt='Звезда')
+              if feedback.rating >= 2
+                img.star(src='img/review/starCOLORED.png' alt='Звезда')
+              if feedback.rating >= 3
+                img.star(src='img/review/starCOLORED.png' alt='Звезда')
+              if feedback.rating >= 4
+                img.star(src='img/review/starCOLORED.png' alt='Звезда')
+              if feedback.rating == 5
+                img.star(src='img/review/starCOLORED.png' alt='Звезда')
+            .buttons
+              - const deleteHref = `/feedback/delete/${feedback.id}`
+              button.button-red.text-button(onclick=`window.location.href='${deleteHref}'`)
+                svg(width='26' height='26' viewbox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M22.5088 22.5064L3.00238 3' stroke='white' stroke-width='5' stroke-linecap='round')
+                  path(d='M22.5088 3L2.99971 22.5091' stroke='white' stroke-width='5' stroke-linecap='round')
+                |                                 &Ucy;&dcy;&acy;&lcy;&icy;&tcy;&softcy;
+              button.button-green.text-button(onclick=`window.location.href='${deleteHref}'`)
+                svg(width='31' height='22' viewbox='0 0 31 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M3 7.8L13.119 18L28 3' stroke='white' stroke-width='5' stroke-linecap='round')
+                |                                 &Dcy;&ocy;&bcy;&acy;&vcy;&icy;&tcy;&softcy;
+footer.footer
+  .logo.text
+    | CLEANS
+  .footer-right
+    .mirea.text
+      | &Rcy;&Tcy;&Ucy; &Mcy;&Icy;&Rcy;&Ecy;&Acy;
+    .project.text
+      | &Pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&ncy;&acy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;&acy;

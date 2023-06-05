@@ -1,0 +1,564 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Cleans
+  link(rel='icon' href='favicon.ico')
+  script(src='js/login_animation.js' defer='')
+  script(src='js/scriptsServices.js' defer='')
+  script(src='js/app.js' defer='')
+  script(src='js/scriptsLogin.js' defer='')
+  script(src='js/scriptsChangeLogReg.js' defer='')
+  script(src='js/SlideAnimation.js' defer='')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap' rel='stylesheet')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap' rel='stylesheet')
+header#hero-banner-href.header-menu
+  .container_menu
+    .header-price-wrapper
+      .header
+        a(href='#hero-banner')
+          img.header__title(src='img/header-menu/LOGO CLEANS.png' alt='')
+        nav.header-nav
+          ul
+            li.header-nav__item
+              a.header-nav__item-link(href='#hero-banner') &Gcy;&Lcy;&Acy;&Vcy;&Ncy;&Acy;&YAcy;
+            li.header-nav__item
+              a.header-nav__item-link(href='#about-us-warp-href') &Ocy; &Ncy;&Acy;&Scy;
+            li.header-nav__item
+              a.header-nav__item-link(href='#Serv') &Ucy;&Scy;&Lcy;&Ucy;&Gcy;&Icy;
+            li.header-nav__item
+              a.header-nav__item-link(href='#review') &Ocy;&Tcy;&Zcy;&Ycy;&Vcy;&Ycy;
+            li.header-nav__item
+              a.header-nav__item-link(href='/profile') &Zcy;&Acy;&Kcy;&Acy;&Zcy;&Acy;&Tcy;&SOFTcy;
+            if username === "admin"
+              li.header-nav__item 
+                a.header-nav__item-link(href='/admin') Проверить отзывы 
+        .tg-and-user-block
+          .header-telegram
+            .header-telegram__item
+              .header-telegram__icon
+                a(href='http://t.me/botic_cleans_bot' target='_blank')
+                  .telegram-content
+                    | TG &Bcy;&Ocy;&Tcy;
+                  svg(width='30' height='30' viewbox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    circle(cx='15' cy='15' r='13.5' stroke='#2F2F2F' stroke-width='3')
+                    path(d='M6.23741 14.4575C11.0692 12.3406 14.2912 10.9451 15.9033 10.2708C20.5063 8.34569 21.4627 8.01127 22.0861 8.00011C22.2232 7.9978 22.5298 8.03196 22.7284 8.194C22.8961 8.33081 22.9422 8.51563 22.9643 8.64535C22.9864 8.77506 23.0139 9.07056 22.992 9.30145C22.7426 11.9368 21.6633 18.3322 21.1142 21.2839C20.8818 22.5328 20.4244 22.9516 19.9815 22.9926C19.0189 23.0816 18.288 22.3529 17.3558 21.7385C15.897 20.7769 15.0729 20.1783 13.6569 19.24C12.0205 18.1557 13.0813 17.5597 14.0139 16.5857C14.258 16.3308 18.4988 12.452 18.5809 12.1001C18.5912 12.0561 18.6007 11.892 18.5038 11.8054C18.4069 11.7188 18.2639 11.7484 18.1606 11.772C18.0143 11.8054 15.6839 13.3542 11.1694 16.4186C10.5079 16.8753 9.90875 17.0979 9.37193 17.0862C8.78013 17.0734 7.64175 16.7497 6.79548 16.4731C5.75749 16.1338 4.93252 15.9545 5.00436 15.3783C5.04178 15.0781 5.45279 14.7712 6.23741 14.4575Z' fill='#2F2F2F')
+          .header-user
+            .header-user__item
+              if isAuthenticated==false
+                button.regButton(onclick="show('block')")
+                  | &Vcy;&KHcy;&Ocy;&Dcy;
+                a.header-user__icon
+                  svg(width='30' height='30' viewbox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd' clip-rule='evenodd' d='M23.9669 22.9748C25.8537 20.8548 27 18.0613 27 15C27 8.37258 21.6274 3 15 3C8.37258 3 3 8.37258 3 15C3 18.0613 4.14629 20.8548 6.03307 22.9748C6.01117 22.8183 6 22.6599 6 22.5C6 19.4624 10.0294 17 15 17C19.9706 17 24 19.4624 24 22.5C24 22.6599 23.9888 22.8183 23.9669 22.9748ZM15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30ZM19 11C19 13.2091 17.2091 15 15 15C12.7909 15 11 13.2091 11 11C11 8.79086 12.7909 7 15 7C17.2091 7 19 8.79086 19 11Z' fill='#2F2F2F')
+                    circle(cx='15' cy='15' r='11' stroke='white' stroke-width='2')
+              else
+                a(href='/session/delete') Выйти
+main
+  .wrapper
+    // Другой Блок Регистрации
+    section
+      #gray(onclick="show('none')")
+      #LOGIN-BLOCK
+        img.close(onclick="show('none')" src='img/header-menu/closeIMG.png' alt='')
+        .form-box
+          h2 &Vcy;&ocy;&jcy;&tcy;&icy;
+          form(action="/session" method="POST")
+            .input-box1
+              label(for="email") &Pcy;&ocy;&chcy;&tcy;&acy;
+              input#email(type='email' required='' name="email")
+            .input-box2
+              label(for="password") &Pcy;&acy;&rcy;&ocy;&lcy;&softcy;
+              input#password(type='password' required='' name="password")
+            .forgot-password-email
+              a(href='#') &Zcy;&acy;&bcy;&ycy;&lcy;&icy; &pcy;&acy;&rcy;&ocy;&lcy;&softcy;?
+            .login-register
+              a.register-link(onclick="showREG('none')") &Zcy;&acy;&rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy;&scy;&yacy;
+            button.btn(type='submit') &Vcy;&ocy;&jcy;&tcy;&icy;
+      #REGISTER-BLOCK
+        img.close(onclick="showREGCLOSE('none')" src='img/header-menu/closeIMG.png' alt='')
+        img.back(onclick="showBack('none')" src='img/header-menu/arrowBackToLog.png' alt='')
+        .form-box
+          h2 &Rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy;
+          form(action="/users" method="POST")
+            .input-box1
+              input(type='Username' required='' name='username')
+              label &Fcy;&Icy;&Ocy;
+            .input-box2
+              input(type='email' required='' name='email')
+              label &Pcy;&ocy;&chcy;&tcy;&acy;
+            .input-box3
+              input(type='password' required='' name='password')
+              label &Pcy;&acy;&rcy;&ocy;&lcy;&softcy;
+            .input-box4
+              input(type='password' required='')
+              label &Pcy;&ocy;&vcy;&tcy;&ocy;&rcy;&icy;&tcy;&iecy; &pcy;&acy;&rcy;&ocy;&lcy;&softcy;
+            .login-register
+              a.login-link(onclick="showBack('none')") &Ucy;&zhcy;&iecy; &iecy;&scy;&tcy;&softcy; &acy;&kcy;&kcy;&acy;&ucy;&ncy;&tcy;?
+            button.btn(type='submit') &Pcy;&rcy;&ocy;&dcy;&ocy;&lcy;&zhcy;&icy;&tcy;&softcy;
+    // Другой Блок Регистрации
+    .content
+      section
+        .banner-warp
+          .container
+            #hero-banner.banner
+              span.banner__text EXPERT CARE
+              b.banner__trend OFF THE DIRT
+              .banner-link-warp
+                a.banner__link.btn-primary(href='#')  &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy; 
+      section
+        .container
+          .about-cleans_container
+            .about-cleans_block-img
+              img.about-cleans_img(src='img/about-us/dominik-martin-b2-fBVrfx0o-unsplash 1.png' alt='bg-block')
+              h2
+                | &Kcy;&Ocy;&Mcy;&Pcy;&Lcy;&IEcy;&Kcy;&Scy;&Ncy;&Ycy;&Jcy; 
+                br
+                |  &Pcy;&Ocy;&Dcy;&KHcy;&Ocy;&Dcy;
+              p &Pcy;&Ocy;&Zcy;&Acy;&Bcy;&Ocy;&Tcy;&SOFTcy;&Tcy;&IEcy;&Scy;&SOFTcy; &Ocy; &Scy;&IEcy;&Bcy;&IEcy;
+              img.arrow-icon(src='.//img/about-us/Arrow 1.png' alt='arrow')
+            .about-cleans_block-text
+              h2.header-text_about-cleans CLEANS
+              p.description-text_about-cleans
+                | &ndash; &ecy;&tcy;&ocy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; &pcy;&rcy;&ocy;&fcy;&iecy;&scy;&scy;&icy;&ocy;&ncy;&acy;&lcy;&ocy;&vcy;, &kcy;&ocy;&tcy;&ocy;&rcy;&acy;&yacy; &scy;&pcy;&iecy;&tscy;&icy;&acy;&lcy;&icy;&zcy;&icy;&rcy;&ucy;&iecy;&tcy;&scy;&yacy; &ncy;&acy; &khcy;&icy;&mcy;&chcy;&icy;&scy;&tcy;&kcy;&iecy; &ocy;&bcy;&ucy;&vcy;&icy;. &Mcy;&ycy; &pcy;&ocy;&ncy;&icy;&mcy;&acy;&iecy;&mcy;, &chcy;&tcy;&ocy; &ocy;&bcy;&ucy;&vcy;&softcy; &ndash; &ecy;&tcy;&ocy; &ncy;&iecy; &tcy;&ocy;&lcy;&softcy;&kcy;&ocy; &ecy;&lcy;&iecy;&mcy;&iecy;&ncy;&tcy; &gcy;&acy;&rcy;&dcy;&iecy;&rcy;&ocy;&bcy;&acy;, &ncy;&ocy; &icy; &zcy;&iecy;&rcy;&kcy;&acy;&lcy;&ocy; &Vcy;&acy;&shcy;&iecy;&jcy; &lcy;&icy;&chcy;&ncy;&ocy;&jcy; &gcy;&icy;&gcy;&icy;&iecy;&ncy;&ycy;.
+              button.btn_about-cleans &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+      section
+        .container
+          .gallery
+            .gallery_top
+              .gallery-top-left
+                .gallery-title_1.title-section_gallery
+                  h2  &Pcy;&Rcy;&Icy;&Mcy;&IEcy;&Rcy;&Ycy; 
+                .gallery-top-left-image
+                  img.gallery-img_1(src='img/gellary/gellary_1.png' alt='Кроссовки')
+              .gallery-top-right
+                .gallery-top-right-image
+                  img.gallery-img(src='img/gellary/gellary_2.png' alt='Кроссовки')
+            .gallery-bottom
+              .gallery-bottom-left
+                .gallery-bottom-left-image
+                  img.gallery-img(src='img/gellary/gellary_3.png' alt='Кроссовки')
+              .gallery-bottom-right
+                .gallery-title_2.title-section_gallery
+                  h2  &Rcy;&Acy;&Bcy;&Ocy;&Tcy; 
+                .gallery-bottom-right-image
+                  img.gallery-img(src='img/gellary/gellary_4.png' alt='Кроссовки')
+      section
+        .container
+          #about-us-warp-href.about-us-warp
+            .about-us-warp-header.title-section
+              h2 &Pcy;&Ocy;&CHcy;&IEcy;&Mcy;&Ucy; &Scy;&Tcy;&Ocy;&Icy;&Tcy;
+              h2 &Vcy;&Ycy;&Bcy;&Rcy;&Acy;&Tcy;&SOFTcy; &Ncy;&Acy;&Scy;?
+            .about-us-warp-cards
+              .about-us-warp-card
+                .about-us-warp-card-header
+                  .card-number 1
+                .about-us-warp-card-header-3
+                  h3 &Kcy;&acy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy; &ocy;&bcy;&scy;&lcy;&ucy;&zhcy;&icy;&vcy;&acy;&ncy;&icy;&yacy;
+                p
+                  | &Mcy;&ycy; &ocy;&bcy;&iecy;&scy;&pcy;&iecy;&chcy;&icy;&vcy;&acy;&iecy;&mcy; &vcy;&ycy;&scy;&ocy;&kcy;&ocy;&iecy; &kcy;&acy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy; &khcy;&icy;&mcy;&chcy;&icy;&scy;&tcy;&kcy;&icy; &ocy;&bcy;&ucy;&vcy;&icy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ocy;&iecy; &ncy;&iecy;&vcy;&ocy;&zcy;&mcy;&ocy;&zhcy;&ncy;&ocy; &dcy;&ocy;&scy;&tcy;&icy;&chcy;&softcy; &pcy;&rcy;&icy; &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&ncy;&icy;&icy; &dcy;&ocy;&mcy;&acy;&shcy;&ncy;&icy;&khcy; &scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;
+              .about-us-warp-card
+                .about-us-warp-card-header
+                  .card-number 2
+                .about-us-warp-card-header-4
+                  h3 &Mcy;&acy;&scy;&tcy;&iecy;&rcy;&scy;&tcy;&vcy;&ocy;
+                p
+                  | &Ncy;&acy;&shcy;&acy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; &pcy;&rcy;&ocy;&fcy;&iecy;&scy;&scy;&icy;&ocy;&ncy;&acy;&lcy;&ocy;&vcy; &ocy;&bcy;&lcy;&acy;&dcy;&acy;&iecy;&tcy; &mcy;&ncy;&ocy;&gcy;&ocy;&lcy;&iecy;&tcy;&ncy;&icy;&mcy; &ocy;&pcy;&ycy;&tcy;&ocy;&mcy; &icy; &zcy;&ncy;&acy;&ncy;&icy;&yacy;&mcy;&icy; &vcy; &ocy;&bcy;&lcy;&acy;&scy;&tcy;&icy; &khcy;&icy;&mcy;&chcy;&icy;&scy;&tcy;&kcy;&icy; &ocy;&bcy;&ucy;&vcy;&icy;
+              .about-us-warp-card
+                .about-us-warp-card-header
+                  .card-number 3
+                .about-us-warp-card-header-4
+                  h3 &Ucy;&dcy;&ocy;&bcy;&scy;&tcy;&vcy;&ocy;
+                p
+                  | &Ncy;&acy;&shcy; &scy;&iecy;&rcy;&vcy;&icy;&scy; &pcy;&rcy;&iecy;&dcy;&ocy;&scy;&tcy;&acy;&vcy;&lcy;&yacy;&iecy;&tcy; &ucy;&dcy;&ocy;&bcy;&ncy;&ycy;&jcy; &scy;&pcy;&ocy;&scy;&ocy;&bcy; &ocy;&fcy;&ocy;&rcy;&mcy;&lcy;&iecy;&ncy;&icy;&yacy; &zcy;&acy;&kcy;&acy;&zcy;&acy; &icy; &ocy;&chcy;&icy;&scy;&tcy;&kcy;&icy; &ocy;&bcy;&ucy;&vcy;&icy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&iecy; &ecy;&kcy;&ocy;&ncy;&ocy;&mcy;&yacy;&tcy; &vcy;&rcy;&iecy;&mcy;&yacy; &kcy;&lcy;&icy;&iecy;&ncy;&tcy;&ocy;&vcy;
+              .about-us-warp-card
+                .about-us-warp-card-header
+                  .card-number 4
+                .about-us-warp-card-header-4
+                  h3 &Ecy;&kcy;&ocy;&lcy;&ocy;&gcy;&icy;&chcy;&ncy;&ocy;&scy;&tcy;&softcy;
+                p
+                  | &Ncy;&acy;&shcy;&acy; &khcy;&icy;&mcy;&chcy;&icy;&scy;&tcy;&kcy;&acy; &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ucy;&iecy;&tcy; &tcy;&ocy;&lcy;&softcy;&kcy;&ocy; &bcy;&iecy;&zcy;&ocy;&pcy;&acy;&scy;&ncy;&ycy;&iecy; &icy; &ecy;&kcy;&ocy;&lcy;&ocy;&gcy;&icy;&chcy;&iecy;&scy;&kcy;&icy; &chcy;&icy;&scy;&tcy;&ycy;&iecy; &scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;&acy; &dcy;&lcy;&yacy; &khcy;&icy;&mcy;&chcy;&icy;&scy;&tcy;&kcy;&icy; &ocy;&bcy;&ucy;&vcy;&icy;
+      section
+        .container
+          #Serv.Services
+            .Services-header.title-section
+              h2 &Ncy;&Acy;&SHcy;&Icy;
+              h2 &Ucy;&Scy;&Lcy;&Ucy;&Gcy;&Icy;
+            nav.Services-nav
+              ul.Services-nav__items
+                li.Services-nav__item.active(data-li='Кроссовки')
+                  a.Services-nav__item-link.active(href='#' onclick='return false') &Kcy;&rcy;&ocy;&scy;&scy;&ocy;&vcy;&kcy;&icy;
+                li.Services-nav__item(data-li='Классическая')
+                  a.Services-nav__item-link(href='#' onclick='return false') &Kcy;&lcy;&acy;&scy;&scy;&icy;&chcy;&iecy;&scy;&kcy;&acy;&yacy;
+                li.Services-nav__item(data-li='Премиальная')
+                  a.Services-nav__item-link(href='#' onclick='return false') &Pcy;&rcy;&iecy;&mcy;&icy;&acy;&lcy;&softcy;&ncy;&acy;&yacy;
+                li.Services-nav__item(data-li='Сезонная')
+                  a.Services-nav__item-link(href='#' onclick='return false') &Scy;&iecy;&zcy;&ocy;&ncy;&ncy;&acy;&yacy;
+                li.Services-nav__item(data-li='Дополнительно')
+                  a.Services-nav__item-link(href='#' onclick='return false') &Dcy;&ocy;&pcy;&ocy;&lcy;&ncy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;
+          .Services-cards
+            .item(data-w-tab='Tab 1' class='Кроссовки')
+              .price-block-01
+                .price-block-01-left
+                  .price-block-01-left-header
+                    .card-header
+                      | &Kcy;&IEcy;&Dcy;&Ycy; &Icy; &Kcy;&Rcy;&Ocy;&Scy;&Scy;&Ocy;&Vcy;&Kcy;&Icy;
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Lcy;&IEcy;&Gcy;&Kcy;&Icy;&IEcy;
+                      p.body-text-white
+                        | &Scy;&icy;&ncy;&tcy;&iecy;&tcy;&icy;&kcy;&acy;/&Scy;&iecy;&tcy;&kcy;&acy;/&Rcy;&iecy;&zcy;&icy;&ncy;&acy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 2000
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Scy;&Tcy;&Acy;&Ncy;&Dcy;&Acy;&Rcy;&Tcy;&Ncy;&Ycy;&IEcy;
+                      p.body-text-white
+                        | &Kcy;&ocy;&zhcy;&acy;/&Zcy;&acy;&mcy;&shcy;&acy;/&Ncy;&ucy;&bcy;&ucy;&kcy;/&Tcy;&kcy;&acy;&ncy;&softcy;/ &Kcy;&ocy;&mcy;&bcy;&icy;&ncy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&ncy;&ycy;&iecy; &mcy;&acy;&tcy;&iecy;&rcy;&icy;&acy;&lcy;&ycy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 2500
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Gcy;&Lcy;&Ucy;&Bcy;&Ocy;&Kcy;&Acy;&YAcy; &Ocy;&CHcy;&Icy;&Scy;&Tcy;&Kcy;&Acy;
+                      p.body-text-white
+                        | &Dcy;&lcy;&yacy; &kcy;&rcy;&ocy;&scy;&scy;&ocy;&vcy;&ocy;&kcy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&iecy; &ncy;&ucy;&zhcy;&ncy;&ocy; &scy;&pcy;&acy;&scy;&acy;&tcy;&softcy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price +500
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                .price-block-01-right
+                  img(src='img/Services/Maxium_5 1.png' alt='кроссовок')
+                  .price-block-01-right-time
+                    .price-block-01-right-time-1
+                      | 10
+                    .price-block-01-right-time-2
+                      .body-text-white-2
+                        span.text-span-6 &Dcy;&Ncy;&IEcy;&Jcy;
+                      .body-text-white &Scy;&rcy;&ocy;&kcy; &vcy;&ycy;&pcy;&ocy;&lcy;&ncy;&iecy;&ncy;&icy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;
+            .item(data-w-tab='Tab 2' class='Классическая' style='display: none;')
+              .price-block-02
+                .price-block-01-left
+                  .price-block-01-left-header
+                    .card-header
+                      | &Kcy;&Lcy;&Acy;&Scy;&Scy;&Icy;&CHcy;&IEcy;&Scy;&Kcy;&Acy;&YAcy; &Ocy;&Bcy;&Ucy;&Vcy;&SOFTcy;
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Lcy;&IEcy;&Gcy;&Kcy;&Icy;&IEcy;
+                      p.body-text-white
+                        | &Tcy;&ucy;&fcy;&lcy;&icy;, &mcy;&ocy;&kcy;&acy;&scy;&icy;&ncy;&ycy;, &lcy;&ocy;&fcy;&iecy;&rcy;&ycy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 2500
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Scy;&Tcy;&Acy;&Ncy;&Dcy;&Acy;&Rcy;&Tcy;&Ncy;&Ycy;&IEcy;
+                      p.body-text-white
+                        | &Bcy;&ocy;&tcy;&icy;&ncy;&kcy;&icy;, &pcy;&ocy;&lcy;&ucy;&scy;&acy;&pcy;&ocy;&gcy;&icy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 3000
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Pcy;&Ocy;&Lcy;&Ncy;&Ycy;&Jcy; &Ucy;&KHcy;&Ocy;&Dcy;
+                      p.body-text-white
+                        | &Ocy;&bcy;&ucy;&vcy;&softcy; &ncy;&acy; &kcy;&ocy;&zhcy;&acy;&ncy;&ocy;&jcy; &pcy;&ocy;&dcy;&ocy;&shcy;&vcy;&iecy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price +1000
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                .price-block-01-right
+                  img(src='img/Services/Maxium_5 2.png' alt='кроссовок')
+                  .price-block-01-right-time
+                    .price-block-01-right-time-1
+                      | 10
+                    .price-block-01-right-time-2
+                      .body-text-white-2
+                        span.text-span-6 &Dcy;&Ncy;&IEcy;&Jcy;
+                      .body-text-white &Scy;&rcy;&ocy;&kcy; &vcy;&ycy;&pcy;&ocy;&lcy;&ncy;&iecy;&ncy;&icy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;
+            .item(data-w-tab='Tab 3' class='Премиальная' style='display: none;')
+              .price-block-03
+                .price-block-01-left
+                  .price-block-01-left-header
+                    .card-header
+                      | &Pcy;&Rcy;&IEcy;&Mcy;&Icy;&Ucy;&Mcy;&Ncy;&Acy;&YAcy; &Ocy;&Bcy;&Ucy;&Vcy;&SOFTcy;
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Dcy;&IEcy;&Lcy;&Icy;&Kcy;&Acy;&Tcy;&Ncy;&Acy;&YAcy; &Ocy;&CHcy;&Icy;&Scy;&Tcy;&Kcy;&Acy;
+                      p.body-text-white
+                        | &Dcy;&lcy;&yacy; &kcy;&rcy;&ocy;&scy;&scy;&ocy;&vcy;&ocy;&kcy; &icy; &ocy;&bcy;&ucy;&vcy;&icy; &icy;&zcy; &lcy;&yucy;&kcy;&scy;-&scy;&iecy;&gcy;&mcy;&iecy;&ncy;&tcy;&acy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 4000
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-02-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Vcy;&Lcy;&Acy;&Gcy;&Ocy;&Ocy;&Tcy;&Vcy;&Ocy;&Dcy;&YAcy;&SHCHcy;&Acy;&YAcy; &Pcy;&Rcy;&Ocy;&Pcy;&Icy;&Tcy;&Kcy;&Acy;
+                      p.body-text-white
+                        | &Ocy;&bcy;&rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&mcy; &vcy;&iecy;&rcy;&khcy;&ncy;&yucy;&yucy; &chcy;&acy;&scy;&tcy;&softcy; &kcy;&rcy;&ocy;&scy;&scy;&ocy;&vcy;&kcy;&acy; &dcy;&lcy;&yacy; &zcy;&acy;&shchcy;&icy;&tcy;&ycy; &ocy;&tcy; &pcy;&ycy;&lcy;&icy;, &gcy;&rcy;&yacy;&zcy;&icy; &icy; &vcy;&lcy;&acy;&gcy;&icy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 500
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                .price-block-01-right
+                  img(src='img/Services/Maxium_5 3.png' alt='кроссовок')
+                  .price-block-01-right-time
+                    .price-block-01-right-time-1
+                      | 7
+                    .price-block-01-right-time-2
+                      .body-text-white-2
+                        span.text-span-6 &Dcy;&Ncy;&IEcy;&Jcy;
+                      .body-text-white &Scy;&rcy;&ocy;&kcy; &vcy;&ycy;&pcy;&ocy;&lcy;&ncy;&iecy;&ncy;&icy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;
+            .item(data-w-tab='Tab 4' class='Сезонная' style='display: none;')
+              .price-block-04
+                .price-block-01-left
+                  .price-block-01-left-header
+                    .card-header
+                      | &Zcy;&Icy;&Mcy;&Ncy;&YAcy;&YAcy; &Ocy;&Bcy;&Ucy;&Vcy;&SOFTcy;
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Ncy;&Icy;&Zcy;&Kcy;&Acy;&YAcy; &Ocy;&Bcy;&Ucy;&Vcy;&SOFTcy;
+                      p.body-text-white
+                        | &Zcy;&icy;&mcy;&ncy;&yacy;&yacy; &icy;&lcy;&icy; &dcy;&iecy;&mcy;&icy;&scy;&iecy;&zcy;&ocy;&ncy;&ncy;&acy;&yacy; &ocy;&bcy;&ucy;&vcy;&softcy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 3500
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Scy;&Rcy;&IEcy;&Dcy;&Ncy;&YAcy;&YAcy;
+                      p.body-text-white
+                        | &Bcy;&ocy;&tcy;&icy;&ncy;&kcy;&icy;/&pcy;&ocy;&lcy;&ucy;&bcy;&ocy;&tcy;&icy;&ncy;&kcy;&icy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 4000
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Vcy;&Ycy;&Scy;&Ocy;&Kcy;&Acy;&YAcy;
+                      p.body-text-white
+                        | &Vcy;&ycy;&scy;&ocy;&kcy;&icy;&iecy; &bcy;&ocy;&tcy;&icy;&ncy;&kcy;&icy;/&Scy;&acy;&pcy;&ocy;&gcy;&icy;/&Bcy;&ocy;&tcy;&fcy;&ocy;&rcy;&tcy;&ycy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 5000
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                .price-block-01-right
+                  img(src='img/Services/Maxium_5 4.png' alt='кроссовок')
+                  .price-block-01-right-time
+                    .price-block-01-right-time-1
+                      | 10
+                    .price-block-01-right-time-2
+                      .body-text-white-2
+                        span.text-span-6 &Dcy;&Ncy;&IEcy;&Jcy;
+                      .body-text-white &Scy;&rcy;&ocy;&kcy; &vcy;&ycy;&pcy;&ocy;&lcy;&ncy;&iecy;&ncy;&icy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;
+            .item(data-w-tab='Tab 5' class='Дополнительно' style='display: none;')
+              .price-block-05
+                .price-block-01-left
+                  .price-block-01-left-header
+                    .card-header
+                      | &Dcy;&Ocy;&Pcy;&Ocy;&Lcy;&Ncy;&Icy;&Tcy;&IEcy;&Lcy;&SOFTcy;&Ncy;&Ycy;&IEcy; &Ucy;&Scy;&Lcy;&Ucy;&Gcy;&Icy;
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Dcy;&iecy;&zcy;&ocy;&dcy;&ocy;&rcy;&acy;&ncy;&tcy;
+                      p.body-text-white
+                        | &Ocy;&bcy;&rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&mcy; &vcy;&ncy;&ucy;&tcy;&rcy;&iecy;&ncy;&ncy;&yucy;&yucy; &chcy;&acy;&scy;&tcy;&softcy; &kcy;&rcy;&ocy;&scy;&scy;&ocy;&vcy;&kcy;&acy; &acy;&ncy;&tcy;&icy;&bcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&acy;&lcy;&softcy;&ncy;&ycy;&mcy; &scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;&ocy;&mcy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 400
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Lcy;&ocy;&kcy;&acy;&lcy;&softcy;&ncy;&acy;&yacy; &rcy;&iecy;&scy;&tcy;&acy;&vcy;&rcy;&acy;&tscy;&icy;&yacy; &icy; &pcy;&ocy;&kcy;&rcy;&acy;&scy;&kcy;&acy; &pcy;&ocy;&tcy;&iecy;&rcy;&tcy;&ocy;&scy;&tcy;&iecy;&jcy; &icy; &tscy;&acy;&rcy;&acy;&pcy;&icy;&ncy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 1500
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                  .price-block-01-left-line
+                  .price-block-01-left-content
+                    .price-block-01-left-content-1-1
+                      p.body-text-white
+                        span.text-span-5
+                          | &Ocy;&tcy;&bcy;&iecy;&lcy;&icy;&vcy;&acy;&ncy;&icy;&iecy; &pcy;&ocy;&dcy;&ocy;&shcy;&vcy;&ycy;
+                    .price-block-01-left-content-1-2
+                      .price-block-01-left-content-1-2-price
+                        .card-price 1000
+                        .ruble-price-01-block
+                          p.price-text-white &rcy;&ucy;&bcy;.
+                .price-block-01-right
+                  img(src='img/Services/Maxium_5 5.png' alt='кроссовок')
+                  .price-block-01-right-time
+                    .price-block-01-right-time-1
+                      | 10
+                    .price-block-01-right-time-2
+                      .body-text-white-2
+                        span.text-span-6 &Dcy;&Ncy;&IEcy;&Jcy;
+                      .body-text-white &Scy;&rcy;&ocy;&kcy; &vcy;&ycy;&pcy;&ocy;&lcy;&ncy;&iecy;&ncy;&icy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;
+          .Services-btn
+            button.btn-services(onclick=`window.location.href='/profile'`)
+              a(href='AdminPanel.html')  &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy; 
+      section
+        .container
+          .review-header.title-section
+            h2 &Vcy;&Acy;&SHcy;&Icy;
+            h2 &Ocy;&Tcy;&Zcy;&Ycy;&Vcy;&Ycy;
+          form(action="/feedback" method="POST")
+            #review.review-section
+              .review-box-cards
+                .swiper-slide.review-block-left
+                  .review-block-card
+                    .text-in-card
+                      p
+                        | &Scy; &dcy;&rcy;&ucy;&gcy;&ocy;&jcy; &scy;&tcy;&ocy;&rcy;&ocy;&ncy;&ycy; &pcy;&ocy;&scy;&tcy;&ocy;&yacy;&ncy;&ncy;&ycy;&jcy; &kcy;&ocy;&lcy;&icy;&chcy;&iecy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&ycy;&jcy; &rcy;&ocy;&scy;&tcy; &icy; &scy;&fcy;&iecy;&rcy;&acy; &ncy;&acy;&shcy;&iecy;&jcy; &acy;&kcy;&tcy;&icy;&vcy;&ncy;&ocy;&scy;&tcy;&icy; &icy;&gcy;&rcy;&acy;&iecy;&tcy; &vcy;&acy;&zhcy;&ncy;&ucy;&yucy; &rcy;&ocy;&lcy;&softcy; &vcy; &fcy;&ocy;&rcy;&mcy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&icy; &scy;&ocy;&ocy;&tcy;&vcy;&iecy;&tcy;&scy;&tcy;&vcy;&ucy;&yucy;&shchcy;&icy;&jcy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&jcy; &acy;&kcy;&tcy;&icy;&vcy;&icy;&zcy;&acy;&tscy;&icy;&icy;. &Icy;&dcy;&iecy;&jcy;&ncy;&ycy;&iecy; &scy;&ocy;&ocy;&bcy;&rcy;&acy;&zhcy;&iecy;&ncy;&icy;&yacy; &vcy;&ycy;&scy;&shcy;&iecy;&gcy;&ocy; &pcy;&ocy;&rcy;&yacy;&dcy;&kcy;&acy;, &acy; &tcy;&acy;&kcy;&zhcy;&iecy; &rcy;&acy;&mcy;&kcy;&icy; &icy; &mcy;&iecy;&scy;&tcy;&ocy; &ocy;&bcy;&ucy;&chcy;&iecy;&ncy;&icy;&yacy; &kcy;&acy;&dcy;&rcy;&ocy;&vcy; &tcy;&rcy;&iecy;&bcy;&ucy;&yucy;&tcy; &ocy;&pcy;&rcy;&iecy;&dcy;&iecy;&lcy;&iecy;&ncy;&icy;&yacy; &icy; &ucy;&tcy;&ocy;&chcy;&ncy;&iecy;&ncy;&icy;&yacy; &fcy;&ocy;&rcy;&mcy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&yacy;.
+                    .rate-sec
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                  .review-block-card-under
+                  .user-block-card
+                    img(src='img/review/userPhoto.png' alt='Картинка Профиля')
+                    .user-name-info
+                      p &Icy;&mcy;&yacy; &Fcy;&acy;&mcy;&icy;&lcy;&ocy;&vcy;
+                      .user-time-review-past
+                        p 10 &dcy;&ncy;&iecy;&jcy; &ncy;&acy;&zcy;&acy;&dcy;
+                .swiper-slide.review-block-center
+                  .review-block-card
+                    .text-in-card
+                      p
+                        | &Scy; &dcy;&rcy;&ucy;&gcy;&ocy;&jcy; &scy;&tcy;&ocy;&rcy;&ocy;&ncy;&ycy; &pcy;&ocy;&scy;&tcy;&ocy;&yacy;&ncy;&ncy;&ycy;&jcy; &kcy;&ocy;&lcy;&icy;&chcy;&iecy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&ycy;&jcy; &rcy;&ocy;&scy;&tcy; &icy; &scy;&fcy;&iecy;&rcy;&acy; &ncy;&acy;&shcy;&iecy;&jcy; &acy;&kcy;&tcy;&icy;&vcy;&ncy;&ocy;&scy;&tcy;&icy; &icy;&gcy;&rcy;&acy;&iecy;&tcy; &vcy;&acy;&zhcy;&ncy;&ucy;&yucy; &rcy;&ocy;&lcy;&softcy; &vcy; &fcy;&ocy;&rcy;&mcy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&icy; &scy;&ocy;&ocy;&tcy;&vcy;&iecy;&tcy;&scy;&tcy;&vcy;&ucy;&yucy;&shchcy;&icy;&jcy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&jcy; &acy;&kcy;&tcy;&icy;&vcy;&icy;&zcy;&acy;&tscy;&icy;&icy;.
+                    .rate-sec
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                  .review-block-card-under
+                  .user-block-card
+                    img(src='img/review/userPhoto.png' alt='Картинка Профиля')
+                    .user-name-info
+                      p &Icy;&mcy;&yacy; &Fcy;&acy;&mcy;&icy;&lcy;&ocy;&vcy;
+                      .user-time-review-past
+                        p 10 &dcy;&ncy;&iecy;&jcy; &ncy;&acy;&zcy;&acy;&dcy;
+                .swiper-slide.review-block-right
+                  .review-block-card
+                    .text-in-card
+                      p &Ecy;&tcy;&ocy; &kcy;&rcy;&icy;&ncy;&zhcy; &bcy;&rcy;&ocy;
+                    .rate-sec
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/starCOLORED.png' alt='Звезда')
+                      img.star(src='img/review/star.png' alt='Звезда')
+                  .review-block-card-under
+                  .user-block-card
+                    img(src='img/review/userPhoto.png' alt='Картинка Профиля')
+                    .user-name-info
+                      p &Icy;&mcy;&yacy; &Fcy;&acy;&mcy;&icy;&lcy;&ocy;&vcy;
+                      .user-time-review-past
+                        p 10 &dcy;&ncy;&iecy;&jcy; &ncy;&acy;&zcy;&acy;&dcy;
+              if isAuthenticated
+                .review-block-write
+                  .review-block-write-header
+                    h2.review-block-write-header_h2 &Ocy;&Scy;&Tcy;&Acy;&Vcy;&Icy;&Tcy;&SOFTcy;
+                    h2 &Scy;&Vcy;&Ocy;&Jcy;
+                  .user-block-rating_write_stat
+                    .user-block-rating-stat
+                      input#rate-5(type='radio' name='rate-5')
+                      label.fas.fa-star(for='rate-5')
+                      input#rate-4(type='radio' name='rate-4')
+                      label.fas.fa-star(for='rate-4')
+                      input#rate-3(type='radio' name='rate-3')
+                      label.fas.fa-star(for='rate-3')
+                      input#rate-2(type='radio' name='rate-2')
+                      label.fas.fa-star(for='rate-2')
+                      input#rate-1(type='radio' name='rate-1')
+                      label.fas.fa-star(for='rate-1')
+                    .user-block-rating_write
+                      .user-block-rating-prof
+                        img.prof-pic(src='img/review/userPhoto.png' alt='Картинка Профиля')
+                      .review-write-input
+                        textarea(cols='30' name='text')
+              if isAuthenticated
+                button.btn_review-section(type='submit') &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy;
+      section
+        a(href='http://t.me/botic_cleans_bot' target='_blank')
+          .telegram-banner
+            .telegram-banner_text
+              .telegram-banner_text-title
+                | &Pcy;&ocy;&dcy;&pcy;&icy;&shcy;&icy;&tcy;&iecy;&scy;&softcy; &ncy;&acy; &ncy;&acy;&shcy;&iecy;&gcy;&ocy; &bcy;&ocy;&tcy;&acy; &vcy; Telegram!
+              .telegram-banner_text-subtitle
+                | &Zcy;&acy;&kcy;&acy;&zcy;&ycy;&vcy;&acy;&jcy;&tcy;&iecy; &icy; &ucy;&zcy;&ncy;&acy;&vcy;&acy;&jcy;&tcy;&iecy; &ocy; &ncy;&ocy;&vcy;&ocy;&scy;&tcy;&yacy;&khcy;
+            .telegram-banner-image
+              img(src='img/telegram_banner/telegram.png' alt='')
+      footer.footer
+        .logo.text
+          | CLEANS
+        .footer-right
+          .mirea.text
+            | &Rcy;&Tcy;&Ucy; &Mcy;&Icy;&Rcy;&Ecy;&Acy;
+          .project.text
+            | &Pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&ncy;&acy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;&acy;

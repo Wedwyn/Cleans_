@@ -1,0 +1,178 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Cleans profile
+  link(rel='icon' href='favicon.ico')
+  link(rel='stylesheet' href='css/profileStyle.css')
+  script(src='js/login_animation.js' defer='')
+  script(src='js/scriptsServices.js' defer='')
+  script(src='js/app.js' defer='')
+  script(src='js/scriptsLogin.js' defer='')
+  script(src='js/scriptsChangeLogReg.js' defer='')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap' rel='stylesheet')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap' rel='stylesheet')
+header#hero-banner-href.header-menu
+  .container_menu
+    .header-price-wrapper
+      .header
+        a(href='/')
+          img.header__title(src='img/header-menu/LOGO CLEANS.png' alt='')
+        nav.header-nav
+          ul
+            li.header-nav__item
+              a.header-nav__item-link(href='#hero-banner') &Gcy;&Lcy;&Acy;&Vcy;&Ncy;&Acy;&YAcy;
+            li.header-nav__item
+              a.header-nav__item-link(href='#about-us-warp-href') &Ocy; &Ncy;&Acy;&Scy;
+            li.header-nav__item
+              a.header-nav__item-link(href='#Serv') &Ucy;&Scy;&Lcy;&Ucy;&Gcy;&Icy;
+            li.header-nav__item
+              a.header-nav__item-link(href='#review') &Ocy;&Tcy;&Zcy;&Ycy;&Vcy;&Ycy;
+            li.header-nav__item
+              a.header-nav__item-link(href='#') &Zcy;&Acy;&Kcy;&Acy;&Zcy;&Acy;&Tcy;&SOFTcy;
+        .header-user
+          .header-user__item
+            button.regButton(onclick="show('block')")
+              | &Vcy;&KHcy;&Ocy;&Dcy;
+              a.header-user__icon
+                svg(width='25' height='25' viewbox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M12.5 12.5C10.8958 12.5 9.52255 11.9288 8.38019 10.7865C7.23783 9.64411 6.66665 8.27084 6.66665 6.66668C6.66665 5.06251 7.23783 3.68925 8.38019 2.54689C9.52255 1.40452 10.8958 0.833344 12.5 0.833344C14.1041 0.833344 15.4774 1.40452 16.6198 2.54689C17.7621 3.68925 18.3333 5.06251 18.3333 6.66668C18.3333 8.27084 17.7621 9.64411 16.6198 10.7865C15.4774 11.9288 14.1041 12.5 12.5 12.5ZM0.833313 24.1667V20.0833C0.833313 19.257 1.04599 18.4974 1.47133 17.8047C1.89668 17.112 2.46179 16.5833 3.16665 16.2188C4.67359 15.4653 6.20484 14.9002 7.7604 14.5234C9.31595 14.1467 10.8958 13.9583 12.5 13.9583C14.1041 13.9583 15.684 14.1467 17.2396 14.5234C18.7951 14.9002 20.3264 15.4653 21.8333 16.2188C22.5382 16.5833 23.1033 17.112 23.5286 17.8047C23.954 18.4974 24.1666 19.257 24.1666 20.0833V24.1667H0.833313ZM3.74998 21.25H21.25V20.0833C21.25 19.816 21.1831 19.5729 21.0495 19.3542C20.9158 19.1354 20.7396 18.9653 20.5208 18.8438C19.2083 18.1875 17.8837 17.6953 16.5469 17.3672C15.21 17.0391 13.8611 16.875 12.5 16.875C11.1389 16.875 9.78991 17.0391 8.4531 17.3672C7.1163 17.6953 5.79165 18.1875 4.47915 18.8438C4.2604 18.9653 4.08418 19.1354 3.9505 19.3542C3.81682 19.5729 3.74998 19.816 3.74998 20.0833V21.25ZM12.5 9.58334C13.3021 9.58334 13.9887 9.29775 14.5599 8.72657C15.1311 8.15539 15.4166 7.46876 15.4166 6.66668C15.4166 5.86459 15.1311 5.17796 14.5599 4.60678C13.9887 4.0356 13.3021 3.75001 12.5 3.75001C11.6979 3.75001 11.0113 4.0356 10.4401 4.60678C9.8689 5.17796 9.58331 5.86459 9.58331 6.66668C9.58331 7.46876 9.8689 8.15539 10.4401 8.72657C11.0113 9.29775 11.6979 9.58334 12.5 9.58334Z' fill='#22262A')
+main
+  .wrapper
+    .content
+      section
+        .container
+          .main-title
+            | &Pcy;&Rcy;&Ocy;&Fcy;&Icy;&Lcy;&SOFTcy;
+      section
+        .container
+          .form-block
+            .form-block-title.section-title
+              span &Ncy;&Acy;&Scy;&Tcy;&Rcy;&Ocy;&Jcy;&Kcy;&Icy;
+              span &Acy;&Kcy;&Kcy;&Acy;&Ucy;&Ncy;&Tcy;&Acy;
+            .form-container
+              .form-container_1
+                form.input-form
+                  label.label-form(for='fio') &Fcy;&Icy;&Ocy;
+                  input#fio(type='text' name='fio')
+                form.input-form
+                  label.label-form(for='password') &Ncy;&ocy;&vcy;&ycy;&jcy; &pcy;&acy;&rcy;&ocy;&lcy;&softcy;
+                  input#password(type='password' name='password')
+              .form-container_1
+                form.input-form
+                  label.label-form(for='email') &Acy;&dcy;&rcy;&iecy;&scy; &ecy;&lcy;&iecy;&kcy;&tcy;&rcy;&ocy;&ncy;&ncy;&ocy;&jcy; &pcy;&ocy;&chcy;&tcy;&ycy;
+                  input#email(type='email' name='email')
+                form.input-form
+                  label.label-form(for='confirm-password') &Pcy;&ocy;&dcy;&tcy;&vcy;&iecy;&rcy;&dcy;&icy;&tcy;&iecy; &pcy;&acy;&rcy;&ocy;&lcy;&softcy;
+                  input#confirm-password(type='password' name='confirm-password')
+                form.input-form
+                  label.label-form(for='telegram') &Scy;&scy;&ycy;&lcy;&kcy;&acy; &ncy;&acy; &vcy;&acy;&shcy; Telegram
+                  input#telegram(type='text' name='telegram')
+      .container
+        .save_btn
+          button.save_button(onclick=`window.location.href='/profile'`)
+            | &Scy;&ocy;&khcy;&rcy;&acy;&ncy;&icy;&tcy;&softcy; &icy;&zcy;&mcy;&iecy;&ncy;&iecy;&ncy;&icy;&yacy;
+      section
+        .container
+          .form-block
+            .form-block-title.section-title
+              span &Acy;&Dcy;&Rcy;&IEcy;&Scy;
+              span &Dcy;&Ocy;&Scy;&Tcy;&Acy;&Vcy;&Kcy;&Icy;
+            .form-container
+              .form-container_1
+                form.input-form
+                  label.label-form(for='Address') &Acy;&dcy;&rcy;&iecy;&scy;
+                  input#Address(type='text' name='Address')
+                form.input-form
+                  label.label-form(for='City') &Gcy;&ocy;&rcy;&ocy;&dcy;
+                  input#City(type='text' name='City')
+              .form-container_1
+                form.input-form
+                  label.label-form(for='Postal-code') &Pcy;&ocy;&chcy;&tcy;&ocy;&vcy;&ycy;&jcy; &icy;&ncy;&dcy;&iecy;&kcy;&scy;
+                  input#Postal-code(type='text' name='Postal-code')
+                form.input-form
+                  label.label-form(for='Region') &Rcy;&iecy;&gcy;&icy;&ocy;&ncy;
+                  input#Region(type='text' name='Region')
+      .container
+        .save_btn
+          button.save_button(onclick=`window.location.href='/profile'`)
+            | &Scy;&ocy;&khcy;&rcy;&acy;&ncy;&icy;&tcy;&softcy; &icy;&zcy;&mcy;&iecy;&ncy;&iecy;&ncy;&icy;&yacy;
+      section
+        .container
+          .form-block
+            .form-block-title.section-title
+              span &Ocy;&Fcy;&Ocy;&Rcy;&Mcy;&Lcy;&IEcy;&Ncy;&Icy;&IEcy;
+              span &Zcy;&Acy;&Kcy;&Acy;&Zcy;&Acy;
+            .row
+              .column
+                .column-input-radio-1
+                  .column-title &Kcy;&rcy;&ocy;&scy;&scy;&ocy;&vcy;&kcy;&icy;
+                  div
+                    input#sneakers(type='radio' name='category')
+                    label.input-Order(for='sneakers') &Lcy;&iecy;&gcy;&kcy;&icy;&iecy;
+                  div
+                    input#sneakers(type='radio' name='category')
+                    label.input-Order(for='sneakers') &Scy;&tcy;&acy;&ncy;&dcy;&acy;&rcy;&tcy;&ncy;&ycy;&iecy;
+                  div
+                    input#sneakers(type='radio' name='category')
+                    label.input-Order(for='sneakers') &Gcy;&lcy;&ucy;&bcy;&ocy;&kcy;&acy;&yacy; &ocy;&chcy;&icy;&scy;&tcy;&kcy;&acy;
+                .column-input-radio-1
+                  .column-title &Pcy;&rcy;&iecy;&mcy;&icy;&acy;&lcy;&softcy;&ncy;&acy;&yacy;
+                  div
+                    input#premium(type='radio' name='category')
+                    label.input-Order(for='premium') &Dcy;&iecy;&lcy;&icy;&kcy;&acy;&tcy;&ncy;&acy;&yacy; &ocy;&chcy;&icy;&scy;&tcy;&kcy;&acy;
+                  div
+                    input#premium(type='radio' name='category')
+                    label.input-Order(for='premium') &Vcy;&lcy;&acy;&gcy;&ocy;&ocy;&tcy;&vcy;&ocy;&dcy;&yacy;&shchcy;&acy;&yacy; &pcy;&rcy;&ocy;&pcy;&icy;&tcy;&kcy;&acy;
+                  div
+                    input#premium(type='radio' name='category')
+                    label.input-Order(for='premium') &Gcy;&lcy;&ucy;&bcy;&ocy;&kcy;&acy;&yacy; &ocy;&chcy;&icy;&scy;&tcy;&kcy;&acy;
+              .column
+                .column-input-radio-2
+                  .column-title &Kcy;&lcy;&acy;&scy;&scy;&icy;&chcy;&iecy;&scy;&kcy;&acy;&yacy;
+                  div
+                    input#classic(type='radio' name='category')
+                    label.input-Order(for='classic') &Lcy;&iecy;&gcy;&kcy;&icy;&iecy;
+                  div
+                    input#classic(type='radio' name='category')
+                    label.input-Order(for='classic') &Scy;&tcy;&acy;&ncy;&dcy;&acy;&rcy;&tcy;&ncy;&ycy;&iecy;
+                  div
+                    input#classic(type='radio' name='category')
+                    label.input-Order(for='classic') &Pcy;&ocy;&lcy;&ncy;&ycy;&jcy; &ucy;&khcy;&ocy;&dcy;
+              .column
+                .column-input-radio-3
+                  .column-title &Scy;&iecy;&zcy;&ocy;&ncy;&ncy;&acy;&yacy;
+                  div
+                    input#seasonal(type='radio' name='category')
+                    label.input-Order(for='seasonal') &Ncy;&icy;&zcy;&kcy;&acy;&yacy;
+                  div
+                    input#seasonal(type='radio' name='category')
+                    label.input-Order(for='seasonal') &Scy;&rcy;&iecy;&dcy;&ncy;&yacy;&yacy;
+                  div
+                    input#seasonal(type='radio' name='category')
+                    label.input-Order(for='seasonal') &Vcy;&ycy;&scy;&ocy;&kcy;&acy;&yacy;
+                .column-input-radio-3
+                  .column-title &Dcy;&ocy;&pcy;&ocy;&lcy;&ncy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;
+                  div
+                    input#additional(type='radio' name='category')
+                    label.input-Order(for='additional') &Dcy;&iecy;&zcy;&ocy;&dcy;&ocy;&rcy;&acy;&ncy;&tcy;
+                  div
+                    input#additional(type='radio' name='category')
+                    label.input-Order(for='additional') &Lcy;&ocy;&kcy;&acy;&lcy;&softcy;&ncy;&acy;&yacy; &rcy;&iecy;&scy;&tcy;&acy;&vcy;&rcy;&acy;&tscy;&icy;&yacy; &icy; &pcy;&ocy;&kcy;&rcy;&acy;&scy;&kcy;&acy;
+                  div
+                    input#additional(type='radio' name='category')
+                    label.input-Order(for='additional') &Ocy;&tcy;&bcy;&iecy;&lcy;&icy;&vcy;&acy;&ncy;&icy;&iecy; &pcy;&ocy;&dcy;&ocy;&shcy;&vcy;&ycy;
+      .container
+        .save_btn_3
+          .amount &Icy;&tcy;&ocy;&gcy;&ocy;&vcy;&acy;&yacy; &scy;&ucy;&mcy;&mcy;&acy;: 5.000 &rcy;&ucy;&bcy;.
+          button.save_button_3(onclick=`window.location.href='/profile'`)
+            | &Scy;&ocy;&khcy;&rcy;&acy;&ncy;&icy;&tcy;&softcy; &icy;&zcy;&mcy;&iecy;&ncy;&iecy;&ncy;&icy;&yacy;
