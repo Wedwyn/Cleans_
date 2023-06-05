@@ -18,8 +18,5 @@ COPY . .
 ENV NODE_ENV=production
 ENV PORT=3000
  
-RUN mkdir dist && chmod 777 dist && mkdir -p dist/preview && chmod 777 dist/preview 
-RUN mkdir -p dist/calendar && chmod 777 dist/calendar
-
-
-CMD ["bash", "-c", "make db-migrate && npm start"]
+RUN npx knex migrate:latest
+RUN npm start
