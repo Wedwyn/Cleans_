@@ -17,6 +17,6 @@ COPY . .
 
 ENV NODE_ENV=production
 ENV PORT=3000
- 
-RUN npx knex migrate:latest
-RUN npm start
+
+
+CMD ["bash", "-c", "make db-migrate && npm start"]
